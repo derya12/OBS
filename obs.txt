@@ -1,0 +1,23 @@
+public class Obs {
+    public static void main(String[] args) {
+        Teacher t1= new Teacher("Derya","90876543","trh");
+        Teacher t2= new Teacher("Emre","03426541","fzk");
+        Teacher t3= new Teacher("Buse","76543096","mat");
+
+        Course tarih=new Course("Tarih","101","trh");
+        tarih.addTeacher(t1);
+        Course fizik=new Course("Fizik","102","fzk");
+        fizik.addTeacher(t2);
+        Course mat=new Course("Matematik","103","mat");
+        mat.addTeacher(t3);
+
+        Student s1=new Student("furkan","654","4",tarih,fizik,mat);
+        s1.addBulkExamNote(100,78,60,90,23,68);
+        s1.isPass();
+        System.out.println("------------------------------------------------");
+
+        Student s2=new Student("kadir","659","4",tarih,fizik,mat);
+        s2.addBulkExamNote(14,8,50,40,30,55);
+        s2.isPass();
+    }
+}
