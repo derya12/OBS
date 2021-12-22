@@ -1,0 +1,65 @@
+public class Student {
+    Course c1;
+    Course c2;
+    Course c3;
+    String name;
+    String StuNo;
+    String classes;
+    double avarage;
+    boolean isPass;
+    int note;
+    int soz;
+    Student(String name,String StuNo,String classes,Course c1,Course c2,Course c3){
+        this.name=name;
+        this.StuNo=StuNo;
+        this.classes=classes;
+        this.c1=c1;
+        this.c2=c2;
+        this.c3=c3;
+        this.avarage=0.0;
+        this.isPass=false;
+    }
+     void addBulkExamNote(int Note1,int Note2,int Note3,int soz1,int soz2,int soz3){
+        if (Note1>=0 && Note1<=100){
+            this.c1.note=Note1;
+        }
+         if (Note2>=0 && Note2<=100){
+             this.c2.note=Note2;
+         }
+         if (Note3>=0 && Note3<=100){
+             this.c3.note=Note3;
+         }
+         if (soz1>=0 && soz1<=100){
+             this.c1.soz=soz1;
+         }
+         if (soz2>=0 && soz2<=100){
+             this.c2.soz=soz2;
+         }
+         if (soz3>=0 && soz3<=100){
+             this.c3.soz=soz3;
+         }
+
+     }
+     void isPass(){
+        this.avarage=(((this.c1.note*(0.8))+(this.c1.soz*(0.2)))+((this.c2.note*(0.8))+(this.c2.soz*(0.2)))+((this.c3.note*(0.8))+(this.c3.soz*(0.2))))/3;
+        if (this.avarage>55){
+            System.out.println("Tebrikler Sınıfı Geçtiniz");
+        }else {
+            System.out.println("Maalesef Sınıfta Kaldınız!!!");
+        }
+        printNote();
+
+     }
+     void printNote(){
+        System.out.println(this.c1.name+" Notu:"+this.c1.note);
+        System.out.println(this.c1.name+" Sözlü Notu:"+this.c1.soz);
+
+        System.out.println(this.c2.name+" Notu:"+this.c2.note);
+        System.out.println(this.c2.name+" Sözlü Notu:"+this.c2.soz);
+
+        System.out.println(this.c3.name+" Notu:"+this.c3.note);
+        System.out.println(this.c3.name+" Sözlü Notu:"+this.c3.soz);
+
+         System.out.println("Ortalamanız:"+this.avarage);
+     }
+}
